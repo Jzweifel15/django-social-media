@@ -126,3 +126,7 @@ LOGIN_REDIRECT_URL = "dashboard"
 LOGIN_URL = "login"
 # The URL to redirect the user to log out
 LOGOUT_URL = "logout"
+
+# For development, instead of using a Simple Mail Transfer Protocol (SMTP), this
+# has Django write emails to the console
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
