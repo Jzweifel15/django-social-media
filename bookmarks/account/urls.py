@@ -4,7 +4,12 @@ from . import views
 
 urlpatterns = [
   # path("login/", views.user_login, name="login"),
+  # Log in and Log out URLs
   path("login/", auth_views.LoginView.as_view(), name="login"),
   path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+  # Change Password URLs
+  path("password_change/", auth_views.PasswordChangeView.as_view(), name="password_change"),
+  path("password_change/done/", auth_views.PasswordChangeDoneView.as_view(), name="password_change_done"),
+  # User Dashboard URL
   path("", views.dashboard, name="dashboard")
 ]
