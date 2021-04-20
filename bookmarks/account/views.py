@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+
 from .forms import LoginForm, UserRegistrationForm
+from .models import Profile
 
 def user_login(request):
   # Check if the form was submitted
@@ -52,6 +54,9 @@ def register(request):
 
       # Officially save the User Object
       new_user.save()
+
+      # Create the user profile
+      Profile.objects.create(user=new_user)
 
       return render(request, "account/register_done.html", {"new_user": new_user})
   else:   # method == "GET"
