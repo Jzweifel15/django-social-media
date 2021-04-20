@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -130,3 +131,7 @@ LOGOUT_URL = "logout"
 # For development, instead of using a Simple Mail Transfer Protocol (SMTP), this
 # has Django write emails to the console
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# Enables Django to serve media files uploaded by users with the development server
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
