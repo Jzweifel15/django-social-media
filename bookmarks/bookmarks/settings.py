@@ -108,6 +108,8 @@ AUTHENTICATION_BACKENDS = [
     "account.authentication.EmailAuthBackend"
 ]
 
+ALLOWED_HOSTS = ["mysite.com", "localhost", "127.0.0.1"]
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
